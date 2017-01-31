@@ -1,0 +1,16 @@
+{
+  "name": "presenter",
+  "version": "1.0.0",
+  "description": "node presenter",
+  "main": "node app.js",
+  "scripts": {},
+  "author": "kangli",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "ini": "^1.3.4",
+    "mysql": "github:mysqljs/mysql",
+    "node-tsv-json": "^0.2.1"
+  },
+  "devDependencies": {}
+}

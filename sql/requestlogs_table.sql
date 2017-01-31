@@ -1,0 +1,46 @@
+/*
+ * Table structure for dbpoolstats
+*/
+use `SUNNYCARE_FRLOGS`;
+DROP TABLE IF EXISTS `request`;
+CREATE TABLE `request` (
+    `logid` varchar(255),
+    `cfnode` varchar(50),
+    `impdate` varchar(255), 
+    `date` varchar(255),
+    `time` varchar(255),
+    `reqdatetimems` int8,
+    `version` int4,
+    `srvstartdatetimems` int8,
+    `reqid` int4,
+    `reqstatus` varchar(255),
+    `cpreason` varchar(255),
+    `threadid` varchar(255),
+    `clientip` varchar(255),
+    `reqmethod` varchar(255),
+    `requrl` varchar(255),
+    `reqexectimems` int4,
+    `memorypctg` int4,
+    `memorymax` int4,
+    `memoryused` int4,
+    `memorytotal` int4, 
+    `memoryfree` int4,    
+    `qstring` varchar(255), 
+    `rstatuscode` int4,
+    `cputimems` int4,
+    `amfmethod` varchar(255),
+    `jsessionid` varchar(255),
+    `cfid` int4,
+    `cftoken` int4,
+    `jdbcquerycnt` int4,
+    `jdbctotaltimems` int8,
+    `jdbctotaldbtimems` int8,
+    `jdbctotalrowcnt` int4,
+    `bytessent` int8,
+    `firstbytetimems` int8,
+    `lastbytetimems` int8,
+    `streamopentimems` int8,
+    `streamclosetimems` int8,
+    `agentstring` varchar(255),
+    UNIQUE KEY `logid` (`logid`)
+);
