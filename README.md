@@ -1,9 +1,5 @@
-# presenter
- 
-A presenter using NodeJS, AngularJS and MysqlJS to present coldfusion logs for performance dashbaord
-# Sahi Presenter
-
-This is an enhancement to the current Sahi Project. The goal of this enhancement is to import the logs into a MySQL database. The MySQL database can than be queried to generate the reports. This is to eliminate the need of the PERL script, and also allow for statistical analysis of the data to be performed. 
+# NodeJS Presenter 
+Started a self learning project: A presenter using NodeJS, AngularJS(Chart.js) and MysqlJS to present coldfusion logs for performance dashbaord. This is an enhancement to the current performance dashboard Project that fusionReactor failed to display lots of metrics. The goal of this enhancement is to import the logs into a MySQL database. The MySQL database can than be queried to generate the performance metrics to allow for statistical analysis of the data to be performed. 
 
 The architecture is as follows:
 * NodeJS (ExpressJS, MySQLJS)
