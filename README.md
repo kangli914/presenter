@@ -1,5 +1,5 @@
 # NodeJS Presenter 
-Started a self learning project: A presenter using NodeJS, AngularJS(Chart.js) and MysqlJS to present coldfusion logs for performance dashbaord. This is an enhancement to the current performance dashboard Project that fusionReactor failed to display lots of metrics. The goal of this enhancement is to import the logs into a MySQL database. The MySQL database can than be queried to generate the performance metrics to allow for statistical analysis of the data to be performed. 
+Started a self learning project: A presenter using NodeJS, AngularJS(Chart.js) and MysqlJS to better present coldfusion logs in performance dashbaord. This is an enhancement to the current performance dashboard project as fusionReactor failed to display lots of missing metrics. The goal of this enhancement is to import the logs into a MySQL database. The MySQL database can than be queried to generate the performance metrics to allow for statistical analysis of the data to be performed. Metrics were displayed in chart typed base for viewing. 
 
 The architecture is as follows:
 * NodeJS (ExpressJS, MySQLJS)
