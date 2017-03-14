@@ -13,6 +13,7 @@ var config = ini.parse( fs.readFileSync('./config.ini', 'utf-8') )
 
 // set directives
 app.use( express.static('static') )
+//app.use( express.static(path.join(__dirname, 'static')))
 app.use( bodyparser.json() )
 app.use( bodyparser.urlencoded({
   extended:true
