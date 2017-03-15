@@ -37,6 +37,11 @@ var data2 = {
     }]
   }
 	
-var Chart = require('chart.js')
+
+//cht(ctx).Line(data);
 //var MyNewChart = new Chart(ctx).Line(data);
 //var MyNewChart = new Chart(ctx).Radar(data2);
+
+var MyNewChart = new Chart.Line(ctx, {
+	data: data
+});

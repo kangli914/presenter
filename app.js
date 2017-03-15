@@ -13,6 +13,7 @@ var config = ini.parse( fs.readFileSync('./config.ini', 'utf-8') )
 
 // set directives
 app.use( express.static('static') )
+app.use( '/modules', express.static('node_modules') )
 //app.use( express.static(path.join(__dirname, 'static')))
 app.use( bodyparser.json() )
 app.use( bodyparser.urlencoded({
@@ -33,14 +34,6 @@ app.use( bodyparser.urlencoded({
     })
    })
 })
-
-/*
-var mychart=document.getElementById("lineChart");
-require(['path/to/Chartjs'], function(Chart){
-   var myChart = new Chart(mychart)
-})
-*/
-
 
 // listen on port 3000
 app.listen(3000)
