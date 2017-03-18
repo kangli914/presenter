@@ -33,6 +33,13 @@ CREATE TABLE `logs` (
 
 Follow the guide provided by [NodeJS][1] to install NodeJS.
 From the `userdata` folder, browse to the `presenter` folder, and run the command `npm install`.
+if you have problem installing express js with the following error:
+"tried a sudo npm install and this error came up:
+npm ERR! Error: UNKNOWN, symlink '../user-home/cli.js'" 
+
+Try the folllowing:
+npm install express --no-bin-links
+
 
 **3. Start the ExpressJS server**
 
