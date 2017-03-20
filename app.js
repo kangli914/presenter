@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+/**
+ * [express description]
+ * @type {[type]}
+ */
 var express = require('express')
   , app = express()
   , bodyparser = require('body-parser')
