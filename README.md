@@ -7,6 +7,15 @@ The architecture is as follows:
 
 NodeJS will serve as the middletier that serves the webcontent and talks to the database. ExpressJS is the framework to be used as the webserver. MySQLJS will interface with the MySQL database. 
 
+Note for using template engine:
+Request flow in Express
+This is how a request to an Express server flows:
+Route → Route Handler → Template → HTML
+The route defines the URL schema. It captures the matching request and passed on control to the corresponding route handler. The route handler processes the request and passes the control to a template. The template constructs the HTML for the response and sends it to the browser.
+
+A template engine enables you to use static template files in your application. At runtime, the template engine replaces variables in a template file with actual values, and transforms the template into an HTML file sent to the client. This approach makes it easier to design an HTML page. When we have the back-end ready, let us focus on building the views for rendering the client. We are going to use a template engine which will help us create dynamic HTML views. Using this template we can define parts of the page that will be populated by the data from the backend and rest will be statically defined. 
+
+
 ## Setting Up
 This guide assumes you have the development environment for Sahi already setup.
 
