@@ -4,9 +4,6 @@ var mysql = require('mysql')
   , tsv = require('node-tsv-json')
   , fs = require('fs')
   , ini = require('ini')
-  , express = require('express')
-
-var app = express()
 
 // read in db config file
 var config = ini.parse( fs.readFileSync('./config.ini', 'utf-8') )
@@ -15,27 +12,28 @@ var config = ini.parse( fs.readFileSync('./config.ini', 'utf-8') )
 var cf_node = process.argv[2]
 var log_files = process.argv.slice(3)
 
+// ToDo: input validation checking
+
 // connect to mysql database
 var pool = mysql.createPool(config.database)
 
 // loop through and parse tsv logs
-for (var i in log_files){
+for (var i in log_files) {
   tsv({
     input: log_files[i],
     parseRows: true
-  }, function(err, result){
-    if(err)
-      console.error(err)
-    else{
+  }, function(err, result) {
+    if (err) console.error(err)
+    else {
 	    var rows = result.slice(0)
 	    var imp_date = Date.now()
   
       get_rowcount_from_db()
-      // loop through each row of file and store log informatino into 'log' object 
-      for(var j in rows){
+      // loop through each row of file and store log information into 'log' object 
+      for (var j in rows) {
         var cols = rows[j]
 
-      // console.log(result) 
+        // console.log(result) 
         var log = {
           cfnode: cf_node,
           impdate: imp_date
@@ -85,32 +83,26 @@ for (var i in log_files){
   	  	log.logid = j
 		
         // send to database
-        add_to_db(log)  
+        add_to_db(log)
       }
     }
   })
 }
 
-
-
-function add_to_db(log){
-  pool.getConnection( function(j, connection){
-    connection.query('INSERT INTO request SET ?', log, function(e,r){
-//      console.log(e)
+function add_to_db(log) {
+  pool.getConnection( function(j, connection) {
+    connection.query('INSERT INTO request SET ?', log, function(e,r) {
       connection.release()
     }) 
   })
 }
 
-
-
-function get_rowcount_from_db(){ 
-  pool.getConnection( function(e, connection){
+function get_rowcount_from_db() { 
+  pool.getConnection( function(e, connection) {
     connection.query('SELECT count(*) as existCnt FROM request', function (e, r) {
       var rowcount = r[0].existCnt  
-      console.log('The existing row count is: ', rowcount)
+      console.log('Insert started from the existing row @: ', rowcount)
     })
-
     connection.release()
-  }) 
+  })  
 }
