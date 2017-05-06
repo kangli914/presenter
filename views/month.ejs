@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head></head>
+<body>
+  <canvas id="c" width="500" height="500"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+  <h1>data: <%= gdata.labels %></h1>
+  <h1>data: <%= gdata.data %></h1>
+  <h1>gmonth: <%= gmonth %></h1>
+  <script>
+    var ctx = document.getElementById("c").getContext("2d");
+
+    var data = {
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      datasets: [{
+        label: "My First dataset",
+        fillColor: "rgba(220,220,220,0.2)",
+        strokeColor: "rgba(220,220,220,1)",
+        pointColor: "rgba(220,220,220,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(220,220,220,1)",
+        data: [<%= gdata.data %>]
+      }]
+    }
+
+    var MyNewChart = new Chart(ctx).Line(data);
+  </script>
+</body>
+</html>
