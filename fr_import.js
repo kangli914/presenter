@@ -15,22 +15,8 @@ var config = ini.parse( fs.readFileSync('./config.ini', 'utf-8') )
 var cf_node = process.argv[2]
 var log_files = process.argv.slice(3)
 
-/*
-  app.get('/', function (req, res) {
-     res.send('Hello World!');
-  });
-
-  app.listen(3000, function () {
-      console.log(log_files);
-      console.log("hello world 2");
-  });
-*/
-// do input validation checking
-
-
 // connect to mysql database
 var pool = mysql.createPool(config.database)
-
 
 // loop through and parse tsv logs
 for (var i in log_files){
