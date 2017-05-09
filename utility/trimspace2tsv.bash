@@ -1,0 +1,1 @@
+awk -v OFS="\t" '$1=$1' request.log > temp && mv temp request.log 
