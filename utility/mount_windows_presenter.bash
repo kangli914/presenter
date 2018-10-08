@@ -15,4 +15,4 @@
 # fix the mount issue when windows rebooted
 
 sudo umount /home/kangli/presenter > /dev/null 2>&1
-sudo mount.cifs //10.0.2.2/debianvm/presenter /home/kangli/presenter -o user=kangli,password=Winter2017,rw,uid=1000,gid=1000
+sudo mount.cifs //10.0.2.2/debianvm/presenter /home/kangli/presenter -o user=xxx,password=xxx,rw,uid=1000,gid=1000
